@@ -8,6 +8,13 @@
 
 #import <Foundation/Foundation.h>
 
+static NSString *const SecondTickNotification = @"Secondtick";
+static NSString *const RoundCompleteNotification = @"RoundComplete";
+static NSString *const NewRoundNotification = @"NewRound";
+
 @interface Timer : NSObject
+
+@property (assign, nonatomic) NSInteger minutes;
+@property (assign, nonatomic) NSInteger seconds;
 
 @end
