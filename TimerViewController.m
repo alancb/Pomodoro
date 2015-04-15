@@ -9,6 +9,8 @@
 #import "TimerViewController.h"
 
 @interface TimerViewController ()
+@property (weak, nonatomic) IBOutlet UIButton *timeButton;
+@property (weak, nonatomic) IBOutlet UILabel *timeLabel;
 
 @end
 
@@ -17,6 +19,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+}
+- (IBAction)timerButtonTapped:(id)sender {
 }
 
 - (void)didReceiveMemoryWarning {
