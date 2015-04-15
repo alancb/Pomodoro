@@ -7,6 +7,7 @@
 //
 
 #import "TimerViewController.h"
+#import "Timer.h"
 
 @interface TimerViewController ()
 @property (weak, nonatomic) IBOutlet UIButton *timeButton;
@@ -19,13 +20,50 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    [self registerForNotifications];
 }
 - (IBAction)timerButtonTapped:(id)sender {
+    self.timeButton.enabled = NO;
+    [[Timer sharedInstance] startTimer];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+-(void) updateTimerLabel {
+    NSInteger minutes = [Timer sharedInstance].minutes;
+    NSInteger seconds = [Timer sharedInstance].seconds;
+    
+    self.timeLabel.text = [self timerStringWithMinutes:minutes AndSeconds:seconds];
+    
+}
+-(NSString *) timerStringWithMinutes: (NSInteger)minutes AndSeconds:(NSInteger)seconds {
+    NSString * timerStringIAm;
+    
+    if (minutes >= 10) {
+        timerStringIAm = [NSString stringWithFormat:@"%li", (long)minutes];
+    }
+    else {
+        timerStringIAm = [NSString stringWithFormat:@"0%li", (long)minutes];
+    }
+    if (seconds >= 10) {
+        timerStringIAm = [timerStringIAm stringByAppendingString:[NSString stringWithFormat:@"%li", (long)seconds]];
+    }
+    else {
+        timerStringIAm = [timerStringIAm stringByAppendingString:[NSString stringWithFormat:@"0%li", (long)seconds]];
+    }
+    
+    return timerStringIAm;
+}
+-(void) registerForNotifications {
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateTimerLabel) name: SecondTickNotification object:nil];
+}
+-(void) unregisterFromNotifications {
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+-(void) dealloc {
+    [self unregisterFromNotifications];
 }
 
 /*

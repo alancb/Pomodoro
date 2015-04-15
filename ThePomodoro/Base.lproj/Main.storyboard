@@ -16,6 +16,12 @@
                     <view key="view" contentMode="scaleToFill" id="LdC-VF-qA1">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="TRL-5b-wae">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="3Iq-j3-oYJ"/>
@@ -45,8 +51,11 @@
                                     <action selector="timerButtonTapped:" destination="DFG-N9-k3u" eventType="touchUpInside" id="URw-LW-fYp"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0RU-gE-xFg">
-                                <rect key="frame" x="279" y="179" width="42" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0RU-gE-xFg">
+                                <rect key="frame" x="16" y="179" width="568" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="6zQ-xK-CmO"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -54,9 +63,12 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="0RU-gE-xFg" firstAttribute="top" secondItem="pJm-6h-7c9" secondAttribute="bottom" constant="159" id="6il-dP-Quf"/>
                             <constraint firstItem="uhv-ro-b6q" firstAttribute="top" secondItem="XDP-Ps-swM" secondAttribute="bottom" constant="217" id="Dp9-DY-sNX"/>
                             <constraint firstItem="XDP-Ps-swM" firstAttribute="trailing" secondItem="tSL-Uy-Cqj" secondAttribute="trailingMargin" id="FME-TK-J1l"/>
                             <constraint firstItem="XDP-Ps-swM" firstAttribute="leading" secondItem="tSL-Uy-Cqj" secondAttribute="leadingMargin" id="Ht3-PB-XRq"/>
+                            <constraint firstItem="0RU-gE-xFg" firstAttribute="leading" secondItem="XDP-Ps-swM" secondAttribute="leading" id="Yd1-Na-HYa"/>
+                            <constraint firstItem="0RU-gE-xFg" firstAttribute="trailing" secondItem="XDP-Ps-swM" secondAttribute="trailing" id="zK6-SN-VtB"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Timer" image="Dashboard-50" id="Eon-8C-VMv"/>
