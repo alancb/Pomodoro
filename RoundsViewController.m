@@ -48,6 +48,29 @@ static NSString *const cellWithIdentifier = @"cellwithID";
     return [RoundsController sharedInstance].roundTimes.count;
     
 }
+
+-(void) roundComplete {
+    if ([RoundsController sharedInstance].currentRound < [RoundsController sharedInstance].roundTimes.count - 1) {
+        [RoundsController sharedInstance].currentRound ++;
+        //select row at index path
+        [[RoundsController sharedInstance]roundSelected];
+    }
+    else {
+        [RoundsController sharedInstance].currentRound = 0;
+        //select row at index path
+        [[RoundsController sharedInstance]roundSelected];
+        
+    }
+}
+-(void) registerForNotifications {
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(roundComplete) name:RoundCompleteNotification object:nil];
+}
+-(void) unregisterFromNotifications {
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+-(void) dealloc {
+    [self unregisterFromNotifications];
+}
 /*
 #pragma mark - Navigation
 

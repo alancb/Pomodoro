@@ -56,8 +56,15 @@
     
     return timerStringIAm;
 }
+-(void) newRound {
+    [self updateTimerLabel];
+    self.timeButton.enabled = YES;
+    
+}
 -(void) registerForNotifications {
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateTimerLabel) name: SecondTickNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(newRound) name:NewRoundNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(newRound) name:RoundCompleteNotification object:nil];
 }
 -(void) unregisterFromNotifications {
     [[NSNotificationCenter defaultCenter] removeObserver:self];
