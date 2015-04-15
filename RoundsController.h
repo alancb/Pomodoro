@@ -10,4 +10,8 @@
 
 @interface RoundsController : NSObject
 
+@property (assign, nonatomic) NSInteger currentRound;
+
++ (RoundsController *)sharedInstance;
+
 @end

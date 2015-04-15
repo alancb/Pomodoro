@@ -10,4 +10,19 @@
 
 @implementation RoundsController
 
++ (RoundsController *)sharedInstance {
+    static RoundsController *sharedInstance = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        sharedInstance = [[RoundsController alloc] init];
+        
+       // [sharedInstance registerForNotifications];
+    });
+    return sharedInstance;
+}
+
+-(NSArray*) roundTimes {
+    return @[@25, @5, @25, @5, @25, @5, @25, @15];
+}
+
 @end
