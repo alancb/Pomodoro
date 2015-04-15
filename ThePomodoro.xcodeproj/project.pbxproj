@@ -9,11 +9,14 @@
 /* Begin PBXBuildFile section */
 		2C8725981ADE1C8200942608 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C8725971ADE1C8200942608 /* main.m */; };
 		2C87259B1ADE1C8200942608 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C87259A1ADE1C8200942608 /* AppDelegate.m */; };
-		2C87259E1ADE1C8200942608 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C87259D1ADE1C8200942608 /* ViewController.m */; };
 		2C8725A11ADE1C8200942608 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C87259F1ADE1C8200942608 /* Main.storyboard */; };
 		2C8725A31ADE1C8200942608 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2C8725A21ADE1C8200942608 /* Images.xcassets */; };
 		2C8725A61ADE1C8200942608 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C8725A41ADE1C8200942608 /* LaunchScreen.xib */; };
 		2C8725B21ADE1C8200942608 /* ThePomodoroTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C8725B11ADE1C8200942608 /* ThePomodoroTests.m */; };
+		2C8725BF1ADE1D4C00942608 /* Timer.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C8725BE1ADE1D4C00942608 /* Timer.m */; };
+		2C8725C21ADE1D7900942608 /* TimerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C8725C11ADE1D7900942608 /* TimerViewController.m */; };
+		2C8725C51ADE1D8E00942608 /* RoundsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C8725C41ADE1D8E00942608 /* RoundsViewController.m */; };
+		2C8725C81ADE1DA200942608 /* RoundsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C8725C71ADE1DA200942608 /* RoundsController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,14 +35,20 @@
 		2C8725971ADE1C8200942608 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		2C8725991ADE1C8200942608 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		2C87259A1ADE1C8200942608 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		2C87259C1ADE1C8200942608 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		2C87259D1ADE1C8200942608 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		2C8725A01ADE1C8200942608 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2C8725A21ADE1C8200942608 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		2C8725A51ADE1C8200942608 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		2C8725AB1ADE1C8200942608 /* ThePomodoroTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ThePomodoroTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C8725B01ADE1C8200942608 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2C8725B11ADE1C8200942608 /* ThePomodoroTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ThePomodoroTests.m; sourceTree = "<group>"; };
+		2C8725BD1ADE1D4C00942608 /* Timer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Timer.h; path = ../Timer.h; sourceTree = "<group>"; };
+		2C8725BE1ADE1D4C00942608 /* Timer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Timer.m; path = ../Timer.m; sourceTree = "<group>"; };
+		2C8725C01ADE1D7900942608 /* TimerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TimerViewController.h; path = ../TimerViewController.h; sourceTree = "<group>"; };
+		2C8725C11ADE1D7900942608 /* TimerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TimerViewController.m; path = ../TimerViewController.m; sourceTree = "<group>"; };
+		2C8725C31ADE1D8E00942608 /* RoundsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RoundsViewController.h; path = ../RoundsViewController.h; sourceTree = "<group>"; };
+		2C8725C41ADE1D8E00942608 /* RoundsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RoundsViewController.m; path = ../RoundsViewController.m; sourceTree = "<group>"; };
+		2C8725C61ADE1DA200942608 /* RoundsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RoundsController.h; path = ../RoundsController.h; sourceTree = "<group>"; };
+		2C8725C71ADE1DA200942608 /* RoundsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RoundsController.m; path = ../RoundsController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,8 +92,8 @@
 			children = (
 				2C8725991ADE1C8200942608 /* AppDelegate.h */,
 				2C87259A1ADE1C8200942608 /* AppDelegate.m */,
-				2C87259C1ADE1C8200942608 /* ViewController.h */,
-				2C87259D1ADE1C8200942608 /* ViewController.m */,
+				2C8725BC1ADE1D3300942608 /* Rounds */,
+				2C8725BB1ADE1D2900942608 /* Timer */,
 				2C87259F1ADE1C8200942608 /* Main.storyboard */,
 				2C8725A21ADE1C8200942608 /* Images.xcassets */,
 				2C8725A41ADE1C8200942608 /* LaunchScreen.xib */,
@@ -117,6 +126,28 @@
 				2C8725B01ADE1C8200942608 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		2C8725BB1ADE1D2900942608 /* Timer */ = {
+			isa = PBXGroup;
+			children = (
+				2C8725BD1ADE1D4C00942608 /* Timer.h */,
+				2C8725BE1ADE1D4C00942608 /* Timer.m */,
+				2C8725C01ADE1D7900942608 /* TimerViewController.h */,
+				2C8725C11ADE1D7900942608 /* TimerViewController.m */,
+			);
+			name = Timer;
+			sourceTree = "<group>";
+		};
+		2C8725BC1ADE1D3300942608 /* Rounds */ = {
+			isa = PBXGroup;
+			children = (
+				2C8725C61ADE1DA200942608 /* RoundsController.h */,
+				2C8725C71ADE1DA200942608 /* RoundsController.m */,
+				2C8725C31ADE1D8E00942608 /* RoundsViewController.h */,
+				2C8725C41ADE1D8E00942608 /* RoundsViewController.m */,
+			);
+			name = Rounds;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -219,7 +250,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2C87259E1ADE1C8200942608 /* ViewController.m in Sources */,
+				2C8725C21ADE1D7900942608 /* TimerViewController.m in Sources */,
+				2C8725C51ADE1D8E00942608 /* RoundsViewController.m in Sources */,
+				2C8725C81ADE1DA200942608 /* RoundsController.m in Sources */,
+				2C8725BF1ADE1D4C00942608 /* Timer.m in Sources */,
 				2C87259B1ADE1C8200942608 /* AppDelegate.m in Sources */,
 				2C8725981ADE1C8200942608 /* main.m in Sources */,
 			);

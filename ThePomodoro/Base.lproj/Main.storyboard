@@ -1,25 +1,115 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1510" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="osn-N9-WKm">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="ufC-wZ-h7g">
+        <!--Rounds View Controller-->
+        <scene sceneID="61o-AC-SLE">
             <objects>
-                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModuleProvider="" sceneMemberID="viewController">
+                <viewController id="Te0-qk-8fN" customClass="RoundsViewController" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
-                        <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
+                        <viewControllerLayoutGuide type="top" id="IxM-ri-Rc8"/>
+                        <viewControllerLayoutGuide type="bottom" id="9lu-DS-2Bb"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
+                    <view key="view" contentMode="scaleToFill" id="LdC-VF-qA1">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" id="3Iq-j3-oYJ"/>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9sT-8m-Pip" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1671" y="412"/>
+        </scene>
+        <!--Timer-->
+        <scene sceneID="paA-Vb-hDQ">
+            <objects>
+                <viewController id="DFG-N9-k3u" customClass="TimerViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="pJm-6h-7c9"/>
+                        <viewControllerLayoutGuide type="bottom" id="uhv-ro-b6q"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="tSL-Uy-Cqj">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XDP-Ps-swM">
+                                <rect key="frame" x="16" y="304" width="568" height="30"/>
+                                <state key="normal" title="Start Timer">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="timerButtonTapped:" destination="DFG-N9-k3u" eventType="touchUpInside" id="URw-LW-fYp"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0RU-gE-xFg">
+                                <rect key="frame" x="279" y="179" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="uhv-ro-b6q" firstAttribute="top" secondItem="XDP-Ps-swM" secondAttribute="bottom" constant="217" id="Dp9-DY-sNX"/>
+                            <constraint firstItem="XDP-Ps-swM" firstAttribute="trailing" secondItem="tSL-Uy-Cqj" secondAttribute="trailingMargin" id="FME-TK-J1l"/>
+                            <constraint firstItem="XDP-Ps-swM" firstAttribute="leading" secondItem="tSL-Uy-Cqj" secondAttribute="leadingMargin" id="Ht3-PB-XRq"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Timer" image="Dashboard-50" id="Eon-8C-VMv"/>
+                    <connections>
+                        <outlet property="timeButton" destination="XDP-Ps-swM" id="zrT-Nk-GtG"/>
+                        <outlet property="timeLabel" destination="0RU-gE-xFg" id="3uQ-dh-sA3"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kvB-br-j0e" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="859" y="-250"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="wJt-uy-esj">
+            <objects>
+                <tabBarController id="osn-N9-WKm" sceneMemberID="viewController">
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="DAy-Bb-SmB">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="DFG-N9-k3u" kind="relationship" relationship="viewControllers" id="Ggi-N1-Cdu"/>
+                        <segue destination="8qM-p9-QPA" kind="relationship" relationship="viewControllers" id="BbR-Cc-MO5"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TQf-1K-SAx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="39" y="81"/>
+        </scene>
+        <!--Rounds-->
+        <scene sceneID="KhM-7T-cBJ">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="8qM-p9-QPA" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Rounds" image="Finish Flag-50" id="oav-wN-5By"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="TLn-s7-0kU">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Te0-qk-8fN" kind="relationship" relationship="rootViewController" id="ch8-RW-pTl"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IoS-JR-gzC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="859" y="412"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Dashboard-50" width="50" height="50"/>
+        <image name="Finish Flag-50" width="50" height="50"/>
+    </resources>
 </document>
