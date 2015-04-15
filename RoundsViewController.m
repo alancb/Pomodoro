@@ -7,8 +7,12 @@
 //
 
 #import "RoundsViewController.h"
+#import "RoundsController.h"
+#import "Timer.h"
 
-@interface RoundsViewController ()
+static NSString *const cellWithIdentifier = @"cellwithID";
+
+@interface RoundsViewController () <UITableViewDataSource, UITableViewDelegate>
 
 @end
 
@@ -24,6 +28,26 @@
     // Dispose of any resources that can be recreated.
 }
 
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [RoundsController sharedInstance].currentRound = indexPath.row;
+    [[RoundsController sharedInstance]roundSelected];
+    [[Timer sharedInstance]cancelTimer];
+}
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath; {
+    
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellWithIdentifier];
+    NSArray *roundArray = [RoundsController sharedInstance].roundTimes;
+    NSNumber *minutes = roundArray [indexPath.row];
+    
+    cell.textLabel.text = [NSString stringWithFormat:@"%li",(long)minutes];
+    
+    return cell;
+
+}
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return [RoundsController sharedInstance].roundTimes.count;
+    
+}
 /*
 #pragma mark - Navigation
 

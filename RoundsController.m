@@ -7,6 +7,7 @@
 //
 
 #import "RoundsController.h"
+#import "Timer.h"
 
 @implementation RoundsController
 
@@ -19,6 +20,14 @@
        // [sharedInstance registerForNotifications];
     });
     return sharedInstance;
+}
+
+-(void) roundSelected {
+    [Timer sharedInstance].minutes = [[self roundTimes][self.currentRound] integerValue]; //integerValue is new
+    [Timer sharedInstance].seconds = 0;
+    
+    [[NSNotificationCenter defaultCenter] postNotificationName:NewRoundNotification object:nil];
+    
 }
 
 -(NSArray*) roundTimes {
