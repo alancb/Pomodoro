@@ -20,6 +20,14 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="TRL-5b-wae">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" id="pNX-9c-sRH">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="pNX-9c-sRH" id="uyE-li-Abk">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
                                 <connections>
                                     <outlet property="dataSource" destination="Te0-qk-8fN" id="1fD-Dl-y1T"/>
                                     <outlet property="delegate" destination="Te0-qk-8fN" id="sSH-Re-rNf"/>
@@ -47,7 +55,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XDP-Ps-swM">
-                                <rect key="frame" x="16" y="304" width="568" height="30"/>
+                                <rect key="frame" x="16" y="304" width="568" height="53"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="53" id="K3I-Ij-UJ6"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="50"/>
                                 <state key="normal" title="Start Timer">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -55,27 +67,25 @@
                                     <action selector="timerButtonTapped:" destination="DFG-N9-k3u" eventType="touchUpInside" id="URw-LW-fYp"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0RU-gE-xFg">
-                                <rect key="frame" x="16" y="179" width="568" height="21"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="6zQ-xK-CmO"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0RU-gE-xFg">
+                                <rect key="frame" x="16" y="142" width="568" height="90"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="100"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.25119471919792946" green="0.26205751579250736" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="0RU-gE-xFg" firstAttribute="top" secondItem="pJm-6h-7c9" secondAttribute="bottom" constant="159" id="6il-dP-Quf"/>
-                            <constraint firstItem="uhv-ro-b6q" firstAttribute="top" secondItem="XDP-Ps-swM" secondAttribute="bottom" constant="217" id="Dp9-DY-sNX"/>
-                            <constraint firstItem="XDP-Ps-swM" firstAttribute="trailing" secondItem="tSL-Uy-Cqj" secondAttribute="trailingMargin" id="FME-TK-J1l"/>
-                            <constraint firstItem="XDP-Ps-swM" firstAttribute="leading" secondItem="tSL-Uy-Cqj" secondAttribute="leadingMargin" id="Ht3-PB-XRq"/>
-                            <constraint firstItem="0RU-gE-xFg" firstAttribute="leading" secondItem="XDP-Ps-swM" secondAttribute="leading" id="Yd1-Na-HYa"/>
-                            <constraint firstItem="0RU-gE-xFg" firstAttribute="trailing" secondItem="XDP-Ps-swM" secondAttribute="trailing" id="zK6-SN-VtB"/>
+                            <constraint firstItem="XDP-Ps-swM" firstAttribute="trailing" secondItem="0RU-gE-xFg" secondAttribute="trailing" id="3l7-La-IUo"/>
+                            <constraint firstItem="0RU-gE-xFg" firstAttribute="top" secondItem="pJm-6h-7c9" secondAttribute="bottom" constant="122" id="JYT-gs-0q0"/>
+                            <constraint firstItem="0RU-gE-xFg" firstAttribute="leading" secondItem="XDP-Ps-swM" secondAttribute="leading" id="U7Z-Qq-lBO"/>
+                            <constraint firstItem="0RU-gE-xFg" firstAttribute="trailing" secondItem="tSL-Uy-Cqj" secondAttribute="trailingMargin" id="aQ5-uZ-6Lk"/>
+                            <constraint firstItem="XDP-Ps-swM" firstAttribute="top" secondItem="0RU-gE-xFg" secondAttribute="bottom" constant="72" id="pUw-vk-zyE"/>
+                            <constraint firstItem="uhv-ro-b6q" firstAttribute="top" secondItem="XDP-Ps-swM" secondAttribute="bottom" constant="194" id="pZX-aG-MaL"/>
+                            <constraint firstItem="0RU-gE-xFg" firstAttribute="leading" secondItem="tSL-Uy-Cqj" secondAttribute="leadingMargin" id="tbl-CZ-D0a"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Timer" image="Dashboard-50" id="Eon-8C-VMv"/>
+                    <tabBarItem key="tabBarItem" title="Timer" image="Dashboard-32" id="Eon-8C-VMv"/>
                     <connections>
                         <outlet property="timeButton" destination="XDP-Ps-swM" id="zrT-Nk-GtG"/>
                         <outlet property="timeLabel" destination="0RU-gE-xFg" id="3uQ-dh-sA3"/>
@@ -108,7 +118,7 @@
         <scene sceneID="KhM-7T-cBJ">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="8qM-p9-QPA" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Rounds" image="Finish Flag-50" id="oav-wN-5By"/>
+                    <tabBarItem key="tabBarItem" title="Rounds" image="Finish Flag-32" id="oav-wN-5By"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="TLn-s7-0kU">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -125,7 +135,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Dashboard-50" width="50" height="50"/>
-        <image name="Finish Flag-50" width="50" height="50"/>
+        <image name="Dashboard-32" width="32" height="32"/>
+        <image name="Finish Flag-32" width="32" height="32"/>
     </resources>
 </document>

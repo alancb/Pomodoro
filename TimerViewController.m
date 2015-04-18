@@ -42,10 +42,10 @@
     NSString * timerStringIAm;
     
     if (minutes >= 10) {
-        timerStringIAm = [NSString stringWithFormat:@"%li", (long)minutes];
+        timerStringIAm = [NSString stringWithFormat:@"%li:", (long)minutes];
     }
     else {
-        timerStringIAm = [NSString stringWithFormat:@"0%li", (long)minutes];
+        timerStringIAm = [NSString stringWithFormat:@"0%li:", (long)minutes];
     }
     if (seconds >= 10) {
         timerStringIAm = [timerStringIAm stringByAppendingString:[NSString stringWithFormat:@"%li", (long)seconds]];

@@ -7,10 +7,16 @@
 //
 
 #import "Timer.h"
+@import UIKit;
+
+static NSString * ExpiriDate = @"Expiration Date";
+
 
 @interface Timer ()
 
 @property (assign, nonatomic) BOOL isOn;
+@property (strong, nonatomic) NSDate* expirationDate;
+
 
 @end
 
@@ -22,15 +28,36 @@
     dispatch_once(&onceToken, ^{
         sharedInstance = [Timer new];
         
-//        sharedInstance.minutes = 6;
-//        sharedInstance.seconds = 5;
-        
     });
     return sharedInstance;
 }
 
+-(void) prepareForBackground {
+    [[NSUserDefaults standardUserDefaults] setObject:self.expirationDate forKey:ExpiriDate];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+}
+
+-(void) loadFromBackground {
+    self.expirationDate = [[NSUserDefaults standardUserDefaults] objectForKey:ExpiriDate];
+    NSTimeInterval seconds = [self.expirationDate timeIntervalSinceNow];
+    self.minutes = seconds / 60;
+    self.seconds = seconds - (self.minutes * 60);
+}
+
 -(void) startTimer {
     self.isOn = YES;
+
+    NSTimeInterval timelength = self.minutes * 60 + self.seconds;
+    self.expirationDate = [NSDate dateWithTimeIntervalSinceNow: timelength];
+    
+    UILocalNotification *timeExpiredNotification = [UILocalNotification new];
+    timeExpiredNotification.fireDate = self.expirationDate;
+    timeExpiredNotification.timeZone = [NSTimeZone defaultTimeZone];
+    timeExpiredNotification.soundName = UILocalNotificationDefaultSoundName;
+    timeExpiredNotification.alertBody = @"Round Complete, Continue with Next Round";
+    
+    [[UIApplication sharedApplication] scheduleLocalNotification:timeExpiredNotification];
+    
     [self checkActive];
 }
 
@@ -65,6 +92,8 @@
 -(void) cancelTimer {
     self.isOn = NO;
     [NSObject cancelPreviousPerformRequestsWithTarget:self]; //This is new. Not sure about it still.
+    [[UIApplication sharedApplication] cancelAllLocalNotifications];
+    
 }
 
 @end

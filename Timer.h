@@ -20,5 +20,7 @@ static NSString *const NewRoundNotification = @"NewRound";
 + (Timer *)sharedInstance;
 -(void) startTimer;
 -(void) cancelTimer;
+-(void) prepareForBackground;
+-(void) loadFromBackground;
 
 @end

@@ -13,6 +13,7 @@
 static NSString *const cellWithIdentifier = @"cellwithID";
 
 @interface RoundsViewController () <UITableViewDataSource, UITableViewDelegate>
+@property (strong, nonatomic) UITableView *tableView;
 
 @end
 
@@ -34,12 +35,13 @@ static NSString *const cellWithIdentifier = @"cellwithID";
     [[Timer sharedInstance]cancelTimer];
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath; {
+
     
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellWithIdentifier];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
     NSArray *roundArray = [RoundsController sharedInstance].roundTimes;
     NSNumber *minutes = roundArray [indexPath.row];
-    
-    cell.textLabel.text = [NSString stringWithFormat:@"%li",(long)minutes];
+    cell.imageView.image = [UIImage imageNamed:[RoundsController imageNames] [indexPath.row]];
+    cell.textLabel.text = [NSString stringWithFormat:@"%li minutes",(long)[minutes integerValue]]; //What does integerValue do?
     
     return cell;
 
@@ -52,12 +54,13 @@ static NSString *const cellWithIdentifier = @"cellwithID";
 -(void) roundComplete {
     if ([RoundsController sharedInstance].currentRound < [RoundsController sharedInstance].roundTimes.count - 1) {
         [RoundsController sharedInstance].currentRound ++;
+        [self.tableView selectRowAtIndexPath:[NSIndexPath indexPathForRow:[RoundsController sharedInstance].currentRound inSection:0] animated:YES scrollPosition:UITableViewScrollPositionNone];
         //select row at index path
         [[RoundsController sharedInstance]roundSelected];
     }
     else {
         [RoundsController sharedInstance].currentRound = 0;
-        //select row at index path
+        [self.tableView selectRowAtIndexPath:[NSIndexPath indexPathForRow:[RoundsController sharedInstance].currentRound inSection:0] animated:YES scrollPosition:UITableViewScrollPositionNone];
         [[RoundsController sharedInstance]roundSelected];
         
     }
